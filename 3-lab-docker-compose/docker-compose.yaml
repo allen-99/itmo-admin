@@ -1,0 +1,15 @@
+version: '1'
+services:
+  app1:
+    build:
+      context: ./kek
+    ports:
+      - "3001:3000"
+
+  app2:
+    build:
+      context: ./lol
+    volumes:
+      - ./lol/index.js:/app/index.js
+    ports:
+      - "3002:3000"
