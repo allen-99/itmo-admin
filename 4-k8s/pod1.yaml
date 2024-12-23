@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resource-limited-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      resources:
+        limits:
+          cpu: "500m"
+        requests:
+          cpu: "250m"
+      ports:
+        - containerPort: 80
